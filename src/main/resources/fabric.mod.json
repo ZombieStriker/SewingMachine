@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "SewingMachine",
+  "version": "${version}",
+  "name": "SewingMachine",
+  "description": "",
+  "authors": [
+    "Zombie_Striker"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/SewingMachine/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.zomibe_striker.sewingmachine.client.SewingMachineClient"
+    ],
+    "main": [
+      "me.zomibe_striker.sewingmachine.SewingMachine"
+    ]
+  },
+  "mixins": [
+    "SewingMachine.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "fabric": "*",
+    "minecraft": "1.19"
+  }
+}
