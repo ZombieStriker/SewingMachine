@@ -6,7 +6,6 @@ import net.minecraft.util.ActionResult;
 public class KeyListener implements KeyPressedCallback {
     @Override
     public ActionResult keypressed(int key, boolean hasShiftDown) {
-        System.out.println("Test");
         return ActionResult.PASS;
     }
 }

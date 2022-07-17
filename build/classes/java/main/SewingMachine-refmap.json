@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "me/zomibe_striker/sewingmachine/mixin/ScreenMixin": {
+      "keyPressed": "Lnet/minecraft/class_437;method_25404(III)Z"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "me/zomibe_striker/sewingmachine/mixin/ScreenMixin": {
+        "keyPressed": "Lnet/minecraft/class_437;method_25404(III)Z"
+      }
+    }
+  }
+}

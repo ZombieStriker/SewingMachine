@@ -1,6 +1,7 @@
 package me.zomibe_striker.sewingmachine;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import me.zomibe_striker.sewingmachine.functions.Function;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.render.GameRenderer;
@@ -26,6 +27,17 @@ public class BotScreen extends Screen {
         RenderSystem.enableDepthTest();
         this.drawTexture(matrices, 0, 0, 0, 0, this.width, this.height);
         TitleScreen.drawStringWithShadow(matrices,textRenderer,"Press ESC to exit.", 1,10,new Color(200,200,200).getRGB());
+        for(int i = 0 ; i < SewingMachine.instance.getFunctionality().getFunctions().size();i++) {
+            Function f = SewingMachine.instance.getFunctionality().getFunctions().get(i);
+            if(f!=null) {
+                if(f.isEnabled()) {
+                    TitleScreen.drawStringWithShadow(matrices, textRenderer, f.getName(), 20, 30 + (i * 30), new Color(200, 200, 200).getRGB());
+                }else{
+                    TitleScreen.drawStringWithShadow(matrices, textRenderer, f.getName(), 20, 30 + (i * 30), new Color(200, 20, 20).getRGB());
+                }
+
+            }
+        }
     }
 
     @Override
@@ -55,6 +67,14 @@ public class BotScreen extends Screen {
 
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
+
+        int Yfunct = (int) ((mouseY-30)/30);
+        if(Yfunct >= 0 && Yfunct < SewingMachine.instance.getFunctionality().getFunctions().size()){
+            Function f = SewingMachine.instance.getFunctionality().getFunctions().get(Yfunct);
+            f.setEnabled(!f.isEnabled());
+        }
+
+
         return super.mouseClicked(mouseX, mouseY, button);
     }
 
