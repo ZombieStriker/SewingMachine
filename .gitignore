@@ -177,5 +177,13 @@ run/
 
 # Gradle stuff
 .gradle/
-gradle/
 build/
+**/build/
+!src/**/build/
+gradle-app.setting
+.gradletasknamecache
+
+# Avoided to ignore gradle files
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
